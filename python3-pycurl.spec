@@ -3,12 +3,12 @@
 Summary:	Free and easy-to-use client-side URL transfer library
 Summary(pl.UTF-8):	Łatwa w użyciu biblioteka obsługi URL od strony klienta
 Name:		python3-%{module}
-Version:	7.45.3
-Release:	3
+Version:	7.45.6
+Release:	1
 License:	LGPL v2 or MIT-like
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/p/pycurl/%{module}-%{version}.tar.gz
-# Source0-md5:	c72d307325e8e4a95276af589957aa36
+# Source0-md5:	385831ba48aab2e109af838643f2921f
 Patch0:		python-pycurl-no-static-libs.patch
 URL:		http://pycurl.io/
 BuildRequires:	curl-devel >= 7.19
