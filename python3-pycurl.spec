@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	python3 >= 1:3.5
 BuildRequires:	python3-devel >= 1:3.4
 BuildRequires:	python3-modules >= 1:3.4
+BuildRequires:	python3-setuptools
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
