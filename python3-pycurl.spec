@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	python3 >= 1:3.5
 BuildRequires:	python3-devel >= 1:3.4
 BuildRequires:	python3-modules >= 1:3.4
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 # During its initialization, PycURL checks that the actual libcurl version
@@ -49,6 +50,7 @@ Summary:	Documentation for pycurl Python module
 Summary(pl.UTF-8):	Dokumentacja do modułu Pythona pycurl
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
+BuildArch:	noarch
 
 %description doc
 This module contains documentation files for pycurl Python module.
@@ -61,6 +63,7 @@ Summary:	Examples for pycurl Python module
 Summary(pl.UTF-8):	Przykładowe programy do modułu Pythona pycurl
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
+BuildArch:	noarch
 
 %description examples
 This module contains examples for pycurl Python module.
