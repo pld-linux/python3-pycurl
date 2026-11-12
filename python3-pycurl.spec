@@ -3,20 +3,20 @@
 Summary:	Free and easy-to-use client-side URL transfer library
 Summary(pl.UTF-8):	Łatwa w użyciu biblioteka obsługi URL od strony klienta
 Name:		python3-%{module}
-Version:	7.45.7
+Version:	7.49.0
 Release:	1
 License:	LGPL v2 or MIT-like
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/p/pycurl/%{module}-%{version}.tar.gz
-# Source0-md5:	90f83052dcc429f5a772305d25cd201e
+# Source0-md5:	a83816308f0a52bce922176da042f505
 Patch0:		python-pycurl-no-static-libs.patch
-URL:		http://pycurl.io/
+URL:		https://pycurl.github.io/
 BuildRequires:	curl-devel >= 7.19
 BuildRequires:	pkgconfig >= 1:0.20
-BuildRequires:	python3 >= 1:3.5
-BuildRequires:	python3-devel >= 1:3.4
-BuildRequires:	python3-modules >= 1:3.4
-BuildRequires:	python3-setuptools
+BuildRequires:	python3 >= 1:3.10
+BuildRequires:	python3-devel >= 1:3.10
+BuildRequires:	python3-modules >= 1:3.10
+BuildRequires:	python3-setuptools >= 1:77
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -26,7 +26,7 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 # automatically reflected by rpm).
 # For now, we have to reflect that dependency.
 %requires_ge curl-libs
-Requires:	python3-libs >= 1:3.5
+Requires:	python3-libs >= 1:3.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -87,7 +87,6 @@ install -d $RPM_BUILD_ROOT{%{py_sitedir},%{_examplesdir}/%{name}-%{version}}
 %py3_install
 
 cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/pycurl
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,7 +95,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING-MIT ChangeLog README.rst RELEASE-NOTES.rst
-%attr(755,root,root) %{py3_sitedir}/pycurl*.so
+%dir %{py3_sitedir}/pycurl
+%attr(755,root,root) %{py3_sitedir}/pycurl/_pycurl.cpython-*.so
+%{py3_sitedir}/pycurl/*.py
+%{py3_sitedir}/pycurl/*.pyi
+%{py3_sitedir}/pycurl/__pycache__
 %dir %{py3_sitedir}/curl
 %{py3_sitedir}/curl/__pycache__
 %{py3_sitedir}/curl/*.py

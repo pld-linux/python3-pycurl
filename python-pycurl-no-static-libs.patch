@@ -1,6 +1,6 @@
---- pycurl-7.43.0.2/setup.py.orig	2018-09-03 22:09:16.912172836 +0200
-+++ pycurl-7.43.0.2/setup.py	2018-09-03 22:18:29.335499860 +0200
-@@ -274,8 +274,8 @@
+--- pycurl-7.49.0/setup.py.orig
++++ pycurl-7.49.0/setup.py
+@@ -174,8 +174,8 @@
          optbuf = ''
          sslhintbuf = ''
          errtext = ''
